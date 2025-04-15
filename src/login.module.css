@@ -1,0 +1,321 @@
+:root {
+    --text: #110e0e;
+    --background: #f8f6f6;
+    --primary: #927877;
+    --secondary: #b9c2b3;
+    --accent: #96ab99;
+
+}
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--background);
+    color: var(--text);
+}
+  
+
+
+.wrapper {
+    position: relative;
+    width: 750px;
+    height: 450px;
+    background: transparent;
+    border: 2px solid var(--accent);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(150, 170, 153, 0.3); /* Accent color in shadow */
+    overflow: hidden;
+}
+
+
+.formBox h2{
+    font-size: 32px;
+    color: white;
+    text-align: center;
+}
+
+.formBox .inputBox{
+    position: relative;
+    width: 100%;
+    height: 50px;
+    margin: 25px 0;
+}
+
+.inputBox input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    border-bottom: 2px solid var(--secondary);
+    padding-right: 23px;
+    color: var(--text);
+    font-weight: 500;
+    transition: 0.5s;
+}
+
+.inputBox input:focus ~ label,
+.inputBox input:valid ~ label{
+    top: -15px;
+    color: var(--accent);
+    
+}
+.inputBox input:focus ~ label,
+.inputBox input:not(:placeholder-shown) ~ label {
+    color: var(--text);
+}
+
+.inputBox input:focus,
+.inputBox input:not(:placeholder-shown) {
+    background: transparent; /* Ensure background remains transparent */
+}
+
+.inputBox input:focus,
+.inputBox input:valid {
+    background: transparent; /* Ensure background remains transparent */
+}
+
+.inputBox label{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: var(--text);
+    pointer-events: none;
+    transition: 0.5s;
+}
+
+.inputBox i{
+    position: absolute;
+    top: 50%;
+    right:  0;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: var(--text);
+}
+
+.btn{
+    position: relative;
+    width: 100%;
+    height: 45px;
+    background: var(--secondary);
+    border: 2px solid var(--accent);
+    outline: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-size: 16px;
+    color: white;
+    font-weight: 600;
+    z-index: 1;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.btn::before{
+    content: '';
+    position: absolute;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 300%;
+    background: linear-gradient(var(--background), var(--accent), var(--primary));
+    z-index: -1; 
+    transition: 0.5s;
+}
+
+.btn:hover::before{
+    top: 0;
+}
+
+
+
+.formBox .signupLink{
+    font-size: 14.5px;
+    color: var(--text);
+    text-align: center;
+    margin-top: 20px 0 10px;
+}
+
+.signupLink p a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.signupLink p a:hover{
+    text-decoration: underline;
+}
+
+.signupLink p{
+    margin-top: 10px;
+    color: black
+}
+
+.loginLink p {
+    color: black;
+    text-decoration: none;
+    font-weight: 200;
+    margin-top: 20px;
+}
+
+.loginLink p a{
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+.loginLink p a:hover{
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+.wrapper .bgAnimate2 {
+    position: absolute;
+    top: 0;
+    left: 0; /* Move to the left */
+    width: 1250px;
+    height: 1250px;
+    background: linear-gradient(-45deg, var(--primary), var(--accent)); /* Flip gradient direction */
+    border-bottom: 5px solid var(--accent);
+    transform: rotate(-15deg) skewY(-50deg); /* Reverse the slant */
+    transform-origin: bottom left; /* Change anchor point */
+}
+
+
+
+
+
+
+.wrapper .infoText{
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    color:   #9b7472;
+    justify-content: center;
+    
+ 
+}
+
+
+.wrapper .infoText.signup{
+    right: 0;
+    text-align: right;
+    padding: 0 40px 60px 150px;
+    
+}
+
+
+.wrapper .formBox{
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.wrapper .formBox.signup{
+    right: 0;
+    padding: 0 60px 0 40px;
+    
+    
+}
+
+.wrapper .formBox.login{
+    left: 0;
+    padding: 0 40px 0 60px;
+    }
+
+.wrapper .infoText.login{
+    
+    right: 0;
+    text-align: right;
+    padding: 0 40px 60px 150px;
+}
+
+.wrapper .infoText.signup {
+    left: 0;
+    text-align: left;
+    padding: 0 150px 60px 40px; /* Reduced right padding for better balance */
+}
+
+
+
+
+.wrapper .infoText h2 {
+    font-size: 28px;
+    color: #4A2E2E;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+    margin-bottom: 12px;
+}
+
+.wrapper .infoText p {
+    font-size: 16px;
+    color: #6B4F4F;
+    font-weight: 500;
+    line-height: 2;
+    text-align: start;
+}
+
+
+.wrapper .bgAnimate {
+    position: absolute;
+    top: 0;  /* Align it to the top */
+    right: 0;
+    width: 1300px; /* Increase width to cover more */
+    height: 1300px; /* Full height */
+    background: linear-gradient(45deg, var(--primary), var(--accent));
+    border-bottom: 5px solid var(--accent);
+    transform: rotate(15deg) skewY(50deg);
+    transform-origin: bottom right;
+}
+
+
+.selectBox label {
+    font-size: 16px;
+    color: black;
+    margin-right: 15px;
+
+}
+
+.selectBox select {
+    width: 40%;
+    font-size: 16px;
+    background: #927877;
+    color: black;
+    border: 2px solid var(--accent);
+    border-radius: 5px;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.selectBox select:hover,
+.selectBox select:focus {
+    background: rgba(113, 153, 119, 0.1);
+    border-color: var(--text);
+}
